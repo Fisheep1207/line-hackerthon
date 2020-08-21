@@ -1,0 +1,17 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta charset="utf-8">  
+        <title> Data </title>  
+    </head>  
+    <body>  
+        <h1><%= user %>'s data list</h1>    
+        <% for(let i=0; i<datas.length; i++) {%>  
+            <ul>  
+                <li>time: <%= datas[i].current_time %></li>  
+                <li>blood pressure: <%= datas[i].blood_pressure %></li> 
+                <li>blood sugar: <%= datas[i].blood_sugar %></li> 
+            </ul>
+        <% } %>    
+    </body>
+</html> 
