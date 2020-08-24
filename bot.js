@@ -7,6 +7,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 3000 ;
 firebase.initializeApp(firebaseConfig);
+
+
 app.use(express.static('./public'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');  
@@ -27,12 +29,11 @@ app.get('/users/:who', async (req, res) => {
         title: '首頁',  
         user: req.params.who,
         datas: arr
-    }); 
+    });
 })
 
 app.post('/API/randomAddData', (req, res) => {
     let name = req.body.name;
-    
     for(let i = 0 ; i < 10; i ++){
         let time = get_time();
         let pressure = Math.floor(Math.random()*200) + 50;
